@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 0; background:#0b1020; color:#eef2ff; }
+header { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; background:#11173a; border-bottom:1px solid #253069; }
+h1 { margin:0; font-size:20px; flex: 0 0 auto; }
+.topnav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.nav.right { margin-left:auto; }
+.hidden { display:none !important; }
+.center { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+.card { width:100%; max-width:420px; background:#0f1633; border:1px solid #253069; border-radius:12px; padding:20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.card input { width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #2a3979; background:#0b1430; color:#eef2ff; }
+.card button { width:100%; }
+h1 { margin:0; font-size:20px; }
+.impl { display:flex; gap:8px; align-items:center; }
+main { padding:24px; max-width: 1000px; margin: 0 auto; }
+.controls { display:flex; gap:8px; margin-bottom:16px; }
+.add form { display:flex; gap:8px; flex-wrap:wrap; }
+.add input { padding:8px; border-radius:6px; border:1px solid #2a3979; background:#0f1633; color:#eef2ff; }
+button { padding:8px 12px; border:none; border-radius:6px; background:#3b82f6; color:white; cursor:pointer; }
+button:hover { background:#2563eb; }
+.lists { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin:16px 0; }
+.lists ul { list-style:none; padding:8px; margin:0; background:#0f1633; border:1px solid #253069; border-radius:8px; min-height:120px; }
+.actions .row { display:flex; gap:8px; margin-bottom:8px; }
+.now-playing { margin-top:16px; padding:12px; background:#0f1633; border:1px solid #253069; border-radius:8px; }
+footer { padding:12px 24px; text-align:center; color:#c7d2fe; border-top:1px solid #253069; background:#11173a; }
+@media (max-width: 800px) { .lists { grid-template-columns: 1fr; } }

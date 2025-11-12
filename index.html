@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Circular Music Playlist</title>
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <section id="loginScreen" class="center">
+      <div class="card">
+        <h2>Welcome to Circular Music Playlist</h2>
+        <p>Please log in to continue.</p>
+        <form id="loginScreenForm">
+          <input id="loginScreenUsername" placeholder="Username" required />
+          <label style="display:flex; align-items:center; gap:8px; margin:6px 0 12px 0;">
+            <input id="rememberMe" type="checkbox" /> Remember me
+          </label>
+          <button id="loginScreenSubmit" type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <header id="appHeader" class="hidden">
+      <h1>Circular Music Playlist</h1>
+      <nav class="topnav">
+        <button data-view="home" class="nav active">Home</button>
+        <button data-view="favorites" class="nav">Favorites</button>
+        <button data-view="queue" class="nav">Queue</button>
+        <button data-view="history" class="nav">History</button>
+        <button id="loginBtn" class="nav right">Login</button>
+      </nav>
+      <div class="impl">
+        <label for="implSelect">Implementation:</label>
+        <select id="implSelect">
+          <option value="circular">Circular (Linked List)</option>
+          <option value="list">List</option>
+        </select>
+        <button id="applyImpl">Apply</button>
+      </div>
+    </header>
+
+    <main id="appRoot" class="hidden">
+      <section id="view-home">
+      <div class="controls">
+        <button id="prevBtn">⏮ Previous</button>
+        <button id="playBtn">▶️ Play</button>
+        <button id="nextBtn">⏭ Next</button>
+      </div>
+
+      <section class="add">
+        <h2>Add Song</h2>
+        <form id="addForm">
+          <input id="title" placeholder="Title" required />
+          <input id="artist" placeholder="Artist" required />
+          <input id="duration" placeholder="Duration (sec)" type="number" min="0" />
+          <input id="audioUrl" placeholder="Audio URL (mp3)" />
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="lists">
+        <div>
+          <h2>All Songs</h2>
+          <ul id="songs"></ul>
+        </div>
+        <div>
+          <h2>Up Next</h2>
+          <ul id="queue"></ul>
+        </div>
+        <div>
+          <h2>History</h2>
+          <ul id="history"></ul>
+        </div>
+      </section>
+
+      <section class="actions">
+        <h2>Actions</h2>
+        <div class="row">
+          <input id="removeId" placeholder="Song ID" type="number" />
+          <button id="removeBtn">Remove</button>
+        </div>
+        <div class="row">
+          <input id="enqueueId" placeholder="Song ID" type="number" />
+          <button id="enqueueBtn">Enqueue Next</button>
+        </div>
+        <div class="row">
+          <button id="seedBtn">Seed 4 English Hits</button>
+        </div>
+      </section>
+
+      <section class="now-playing">
+        <h2>Now Playing</h2>
+        <div id="nowPlaying">None</div>
+        <audio id="player" controls preload="none" style="margin-top:8px; width:100%"></audio>
+      </section>
+      </section>
+
+      <section id="view-favorites" class="hidden">
+        <h2>Favorites</h2>
+        <ul id="favorites"></ul>
+      </section>
+
+      <section id="view-queue" class="hidden">
+        <h2>Up Next</h2>
+        <ul id="queueOnly"></ul>
+      </section>
+
+      <section id="view-history" class="hidden">
+        <h2>History</h2>
+        <ul id="historyOnly"></ul>
+      </section>
+
+      <!-- Login dialog removed in favor of dedicated login screen -->
+    </main>
+
+    <footer>
+      <small>ADTs used: Circular Doubly Linked List, Stack (history), Queue (up next)</small>
+    </footer>
+
+    <script src="app.js?v=2"></script>
+  </body>
+</html>

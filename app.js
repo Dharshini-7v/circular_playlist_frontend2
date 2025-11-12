@@ -1,4 +1,4 @@
-const API = window.location.origin; // use current origin so any port works
+const API = 'https://circular-playlist.onrender.com';
 
 async function api(path, opts = {}) {
   const res = await fetch(API + path, {
@@ -257,3 +257,4 @@ async function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
